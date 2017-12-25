@@ -23,7 +23,7 @@ namespace DemoApp
 
         static void Main(string[] args)
         {
-            DecoratorDosa();
+            DecoratorPizza();
 
             Console.ReadKey();
         }
