@@ -13,6 +13,13 @@ using DemoApp.Patterns.Structural.Composite;
 using DemoApp.Patterns.Structural.Proxy;
 using DemoApp.Patterns.Decorator;
 using DemoApp.Patterns.Creational.Factory;
+using Template = DemoApp.Patterns.Behaviourial.Template;
+using CORLeave = DemoApp.Patterns.Behaviourial.ChainOfResponsiblity.EmployeeLeave;
+using CORLog = DemoApp.Patterns.Behaviourial.ChainOfResponsiblity.Logger;
+using SN = DemoApp.Patterns.Behaviourial.Iterator.SocialNetwork;
+using YTC = DemoApp.Patterns.Behaviourial.Observer.YoutubeChannel;
+using Memento = DemoApp.Patterns.Behaviourial.Memento;
+using DemoApp.Patterns.Behaviourial.Command;
 
 namespace DemoApp
 {
@@ -23,8 +30,7 @@ namespace DemoApp
 
         static void Main(string[] args)
         {
-            DecoratorPizza();
-
+            CommandPattern();
             Console.ReadKey();
         }
 
@@ -105,6 +111,132 @@ namespace DemoApp
         #endregion
 
         #region Desing Patterns
+
+        #region Behaviourial
+
+        private static void TemplatePattern()
+        {
+            Template.CarTemplate audi = new Template.Audi();
+            Template.CarTemplate bmw = new Template.BMW();
+            Template.CarTemplate benz = new Template.Benz();
+
+            audi.BuildCare();
+            bmw.BuildCare();
+            benz.BuildCare();
+
+
+        }
+
+        private static void ChainOfResponsibilityPattern()
+        {
+            #region Leave Aprroval
+            CORLeave.ILeaveHandler teamLead = new CORLeave.TeamLead();
+            CORLeave.ILeaveHandler projectManager = new CORLeave.ProjectManager();
+            CORLeave.ILeaveHandler hr = new CORLeave.HR();
+
+            teamLead.SetNextHandler(projectManager);
+            projectManager.SetNextHandler(hr);
+
+            teamLead.LeaveApproval("Chandra",8);
+            #endregion
+            CORLog.LoggerHandler info = new CORLog.Info();
+            CORLog.LoggerHandler debug = new CORLog.Debug();
+            CORLog.LoggerHandler error = new CORLog.Error();
+
+            info.SetNextLoggerHandler(debug);
+            debug.SetNextLoggerHandler(error);
+
+            info.Log("Error");
+
+            #region Logger
+
+
+
+            #endregion
+
+        }
+
+        private static void IteratorPattern()
+        {
+            SN.ISocialNetwork faceBook = new SN.FaceBook();
+            SN.IIterator faceBookIterator = faceBook.CreateIterator();
+            Iterate(faceBookIterator);
+
+            SN.ISocialNetwork twitter = new SN.Twitter();
+            SN.IIterator twitterIterator = twitter.CreateIterator();
+            Iterate(twitterIterator);
+        }
+
+        private static void Iterate(SN.IIterator iterator)
+        {
+            while(!iterator.isDone())
+            {
+                Console.WriteLine(string.Format("User Name : {0}", iterator.CurrentItem()));
+                iterator.Next();
+            }
+
+        }
+
+        private static void ObservablePattern()
+        {
+            YTC.ISubscriber subscriber1 = new YTC.User() {Name = "Ram" };
+            YTC.ISubscriber subscriber2 = new YTC.User() { Name = "Anbu" };
+            YTC.ISubscriber subscriber3 = new YTC.User() { Name = "Bala" };
+
+            YTC.IPublisher channel = new YTC.YouTubeChannel();
+            channel.Subscribe(subscriber1);
+            channel.Subscribe(subscriber2);
+            channel.Subscribe(subscriber3);
+
+            Console.WriteLine("Three user are subscribed \n");
+
+            channel.NotifyToSubscribers(); // New Update to channel
+
+            Console.WriteLine("\n One user is unsubscribed \n");
+            
+            channel.UnSubscrie(subscriber1);
+
+            channel.NotifyToSubscribers(); // New Update to channel
+        }
+
+        private static void MementoPattern()
+        {            
+            Memento.CareTaker carTaker = new Memento.CareTaker();
+            Memento.Orginator orginator = new Memento.Orginator();
+
+            orginator.SetMessage("TestMessage1");
+            carTaker.AddMemento(orginator.SaveMessage());
+
+            orginator.SetMessage("TestMessage2");
+            carTaker.AddMemento(orginator.SaveMessage());
+
+            orginator.SetMessage("TestMessage3");
+            carTaker.AddMemento(orginator.SaveMessage());
+
+            orginator.SetMessage("TestMessage3");
+            carTaker.AddMemento(orginator.SaveMessage());
+
+            orginator.RestoreMessage(carTaker.Undo()); 
+            orginator.RestoreMessage(carTaker.Undo());
+            orginator.RestoreMessage(carTaker.Redo());
+
+            Console.WriteLine(orginator.GetMessage());
+        }
+
+        private static void CommandPattern()
+        {
+
+            WordDocument document = new WordDocument();
+            ICommand openCommand = new Open(document);
+            ICommand saveCommand = new Save(document);
+            ICommand closeCommand = new Close(document);
+
+            openCommand.Execute();
+            saveCommand.Execute();
+            closeCommand.Execute();
+        }
+
+        #endregion
 
         #region Creational
         private static void SingletonPattern()

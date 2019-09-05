@@ -4,3 +4,16 @@ C:\Users\chanDra\source\repos\DemoApp\DemoApp\bin\Debug\DemoApp.pdb
 C:\Users\chanDra\source\repos\DemoApp\DemoApp\obj\Debug\DemoApp.csproj.CoreCompileInputs.cache
 C:\Users\chanDra\source\repos\DemoApp\DemoApp\obj\Debug\DemoApp.exe
 C:\Users\chanDra\source\repos\DemoApp\DemoApp\obj\Debug\DemoApp.pdb
+E:\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\bin\Debug\DemoApp.exe.config
+E:\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\obj\Debug\DemoApp.exe
+E:\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\obj\Debug\DemoApp.pdb
+E:\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\bin\Debug\DemoApp.exe
+E:\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\bin\Debug\DemoApp.pdb
+E:\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\obj\Debug\DemoApp.csprojResolveAssemblyReference.cache
+E:\Professional\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\bin\Debug\DemoApp.exe.config
+E:\Professional\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\bin\Debug\DemoApp.exe
+E:\Professional\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\bin\Debug\DemoApp.pdb
+E:\Professional\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\obj\Debug\DemoApp.csprojAssemblyReference.cache
+E:\Professional\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\obj\Debug\DemoApp.csproj.CoreCompileInputs.cache
+E:\Professional\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\obj\Debug\DemoApp.exe
+E:\Professional\Profession\Demo Apps\CSharpDemoApp\trunk\DemoApp\DemoApp\obj\Debug\DemoApp.pdb

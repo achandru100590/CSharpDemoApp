@@ -46,6 +46,37 @@
     <Compile Include="OOPS\Bank.cs" />
     <Compile Include="OOPS\Car.cs" />
     <Compile Include="OOPS\EmployeeDetails.cs" />
+    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\EmployeeLeave\ILeaveHandler.cs" />
+    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\EmployeeLeave\TeamLead.cs" />
+    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\EmployeeLeave\ProjectManager.cs" />
+    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\EmployeeLeave\HR.cs" />
+    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Logger\Debug.cs" />
+    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Logger\Error.cs" />
+    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Logger\Info.cs" />
+    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Logger\LoggerHandler.cs" />
+    <Compile Include="Patterns\Behaviourial\Command\Close.cs" />
+    <Compile Include="Patterns\Behaviourial\Command\ICommand.cs" />
+    <Compile Include="Patterns\Behaviourial\Command\Open.cs" />
+    <Compile Include="Patterns\Behaviourial\Command\Save.cs" />
+    <Compile Include="Patterns\Behaviourial\Command\WordDocument.cs" />
+    <Compile Include="Patterns\Behaviourial\Iterator\SocialNetwork\FaceBook.cs" />
+    <Compile Include="Patterns\Behaviourial\Iterator\SocialNetwork\FaceBookIterator.cs" />
+    <Compile Include="Patterns\Behaviourial\Iterator\SocialNetwork\IIterator.cs" />
+    <Compile Include="Patterns\Behaviourial\Iterator\SocialNetwork\ISocialNetwork.cs" />
+    <Compile Include="Patterns\Behaviourial\Iterator\SocialNetwork\Twitter.cs" />
+    <Compile Include="Patterns\Behaviourial\Iterator\SocialNetwork\TwitterIterator.cs" />
+    <Compile Include="Patterns\Behaviourial\Mediaor\Class1.cs" />
+    <Compile Include="Patterns\Behaviourial\Memento\CareTaker.cs" />
+    <Compile Include="Patterns\Behaviourial\Memento\Memento.cs" />
+    <Compile Include="Patterns\Behaviourial\Memento\Orginator.cs" />
+    <Compile Include="Patterns\Behaviourial\Observer\YoutubeChannel\IPublisher.cs" />
+    <Compile Include="Patterns\Behaviourial\Observer\YoutubeChannel\ISubscriber.cs" />
+    <Compile Include="Patterns\Behaviourial\Observer\YoutubeChannel\User.cs" />
+    <Compile Include="Patterns\Behaviourial\Observer\YoutubeChannel\YouTubeChannel.cs" />
+    <Compile Include="Patterns\Behaviourial\Template\Audi.cs" />
+    <Compile Include="Patterns\Behaviourial\Template\Benz.cs" />
+    <Compile Include="Patterns\Behaviourial\Template\BMW.cs" />
+    <Compile Include="Patterns\Behaviourial\Template\CarTemplate.cs" />
     <Compile Include="Patterns\Creational\Builder\BuilderPhone.cs" />
     <Compile Include="Patterns\Creational\Factory\FactoryEmployee.cs" />
     <Compile Include="Patterns\Creational\Factory\FactoryAnimal.cs" />
@@ -64,9 +95,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Patterns\Behaviourial\Observer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
