@@ -8,7 +8,7 @@ namespace DemoApp.Patterns.Behaviourial.ChainOfResponsiblity.Logger
 {
     public abstract class LoggerHandler
     {
-        public LoggerHandler loggerHandler;
+        protected LoggerHandler loggerHandler;
        
         public void SetNextLoggerHandler(LoggerHandler loggerHandler)
         {

@@ -5,26 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DemoApp.OOPS
-{
-    public interface IBeverage
-    {
-        void AddSugar();
-        void AddWatter();
-        void AddMilk();
-        void AddPowder();
-    }
+{   
     public abstract class Beverage
     {
         public void AddMilk()
         {
             Console.WriteLine("Milk is added.");
         }
-
         public void AddSugar()
         {
             Console.WriteLine("Sugar is added.");
         }
-
         public void AddWatter()
         {
             Console.WriteLine("Watter is added.");

@@ -13,11 +13,6 @@ namespace DemoApp.OOPS
             return 11.5;
         }
 
-        public virtual double Interest1()
-        {
-            return 11.5;
-        }
-
     }
     public class HDFC : BankBase
     {

@@ -20,6 +20,8 @@ using SN = DemoApp.Patterns.Behaviourial.Iterator.SocialNetwork;
 using YTC = DemoApp.Patterns.Behaviourial.Observer.YoutubeChannel;
 using Memento = DemoApp.Patterns.Behaviourial.Memento;
 using DemoApp.Patterns.Behaviourial.Command;
+using DemoApp.Patterns.Behaviourial.ChainOfResponsiblity.Aunthentication;
+using DemoApp.Patterns.Behaviourial.ChainOfResponsiblity.Authentication;
 
 namespace DemoApp
 {
@@ -30,7 +32,8 @@ namespace DemoApp
 
         static void Main(string[] args)
         {
-            CommandPattern();
+            ChainOfResponsibilityPattern();
+
             Console.ReadKey();
         }
 
@@ -132,13 +135,16 @@ namespace DemoApp
             #region Leave Aprroval
             CORLeave.ILeaveHandler teamLead = new CORLeave.TeamLead();
             CORLeave.ILeaveHandler projectManager = new CORLeave.ProjectManager();
-            CORLeave.ILeaveHandler hr = new CORLeave.HR();
+            CORLeave.ILeaveHandler hr = new CORLeave.DeliveryManager();
 
             teamLead.SetNextHandler(projectManager);
             projectManager.SetNextHandler(hr);
 
             teamLead.LeaveApproval("Chandra",8);
             #endregion
+
+            #region Logger
+
             CORLog.LoggerHandler info = new CORLog.Info();
             CORLog.LoggerHandler debug = new CORLog.Debug();
             CORLog.LoggerHandler error = new CORLog.Error();
@@ -148,9 +154,18 @@ namespace DemoApp
 
             info.Log("Error");
 
-            #region Logger
+            #endregion
 
+            #region Aunthentication
 
+            AuthenticationHandler singleFA = new SingleFactorAuthentication();
+            AuthenticationHandler secondFA= new SecondFactorAuthentication();
+            AuthenticationHandler multiFA = new MultiFactorAuthentication();
+
+            singleFA.SetAuthenticationHandler(secondFA);
+            secondFA.SetAuthenticationHandler(multiFA);
+
+            singleFA.Authendicate(AuthenticationType.OTP);
 
             #endregion
 
@@ -303,7 +318,7 @@ namespace DemoApp
         private static void FactoryPatternAnimal()
         {
             LandAnimalFactory landAnimalFactory = new LandAnimalFactory();
-
+           
             IAnimal animal = landAnimalFactory.GetAnimal(Animal.Cat);
 
             Console.WriteLine("I am {0} and Speak {1}.", Animal.Cat, animal.Speak());
