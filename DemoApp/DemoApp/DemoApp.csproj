@@ -42,6 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concepts\Delegates\Employee.cs" />
+    <Compile Include="Concepts\Delegates\MultiCast.cs" />
+    <Compile Include="Concepts\Delegates\Numbers.cs" />
+    <Compile Include="Concepts\Delegates\YouTubePublisher.cs" />
+    <Compile Include="Concepts\Delegates\Subscriber.cs" />
+    <Compile Include="Concepts\Delegates\VideoEncode.cs" />
+    <Compile Include="Concepts\Delegates\VideoUploadedEventArgs.cs" />
     <Compile Include="OOPS\AbsEncaps.cs" />
     <Compile Include="OOPS\Bank.cs" />
     <Compile Include="OOPS\Car.cs" />
@@ -81,10 +88,16 @@
     <Compile Include="Patterns\Behaviourial\Observer\YoutubeChannel\ISubscriber.cs" />
     <Compile Include="Patterns\Behaviourial\Observer\YoutubeChannel\User.cs" />
     <Compile Include="Patterns\Behaviourial\Observer\YoutubeChannel\YouTubeChannel.cs" />
+    <Compile Include="Patterns\Behaviourial\Strategy\IOfferStrategy.cs" />
+    <Compile Include="Patterns\Behaviourial\Strategy\WeekDaysOffer.cs" />
+    <Compile Include="Patterns\Behaviourial\Strategy\WeekendOffer.cs" />
     <Compile Include="Patterns\Behaviourial\Template\Audi.cs" />
     <Compile Include="Patterns\Behaviourial\Template\Benz.cs" />
     <Compile Include="Patterns\Behaviourial\Template\BMW.cs" />
     <Compile Include="Patterns\Behaviourial\Template\CarTemplate.cs" />
+    <Compile Include="Patterns\Behaviourial\Template\House\HouseTemplate.cs" />
+    <Compile Include="Patterns\Behaviourial\Template\House\GlassHouse.cs" />
+    <Compile Include="Patterns\Behaviourial\Template\House\WoodenHouse.cs" />
     <Compile Include="Patterns\Creational\Builder\BuilderPhone.cs" />
     <Compile Include="Patterns\Creational\Factory\FactoryEmployee.cs" />
     <Compile Include="Patterns\Creational\Factory\FactoryAnimal.cs" />

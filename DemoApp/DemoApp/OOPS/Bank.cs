@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DemoApp.OOPS
+﻿namespace DemoApp.OOPS
 {
-    public abstract class BankBase
+    public class BankBase
     {
         public virtual double Interest()
         {
@@ -23,16 +17,10 @@ namespace DemoApp.OOPS
     }
     public class IOB : BankBase
     {
-        public override double Interest()
-        {
-            return base.Interest();
-        }
+
     }
     public class SBI : BankBase
     {
-        public override double Interest()
-        {
-            return base.Interest();
-        }
+
     }
 }

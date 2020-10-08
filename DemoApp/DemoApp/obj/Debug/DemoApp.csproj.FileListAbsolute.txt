@@ -23,3 +23,4 @@ C:\MyStorage\WorkSpace\CSharpDemoApp\DemoApp\DemoApp\bin\Debug\DemoApp.pdb
 C:\MyStorage\WorkSpace\CSharpDemoApp\DemoApp\DemoApp\obj\Debug\DemoApp.csprojAssemblyReference.cache
 C:\MyStorage\WorkSpace\CSharpDemoApp\DemoApp\DemoApp\obj\Debug\DemoApp.exe
 C:\MyStorage\WorkSpace\CSharpDemoApp\DemoApp\DemoApp\obj\Debug\DemoApp.pdb
+C:\MyStorage\WorkSpace\CSharpDemoApp\DemoApp\DemoApp\obj\Debug\DemoApp.csproj.CoreCompileInputs.cache
