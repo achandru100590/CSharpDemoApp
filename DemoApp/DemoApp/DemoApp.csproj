@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,9 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concepts\Ctor\BaseClass.cs" />
+    <Compile Include="Concepts\Ctor\A.cs" />
     <Compile Include="Concepts\Delegates\Employee.cs" />
     <Compile Include="Concepts\Delegates\MultiCast.cs" />
     <Compile Include="Concepts\Delegates\Numbers.cs" />
+    <Compile Include="Concepts\Delegates\Subs.cs" />
+    <Compile Include="Concepts\Delegates\Pubs.cs" />
     <Compile Include="Concepts\Delegates\YouTubePublisher.cs" />
     <Compile Include="Concepts\Delegates\Subscriber.cs" />
     <Compile Include="Concepts\Delegates\VideoEncode.cs" />
@@ -56,19 +63,9 @@
     <Compile Include="OOPS\Inheritance.cs" />
     <Compile Include="OOPS\MethodHiding.cs" />
     <Compile Include="OOPS\MethodOverriding.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Authentication\AuthenticationHandler.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Authentication\AuthenticationType.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Authentication\SecondFactorAuthentication.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Authentication\MultiFactorAuthentication.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Authentication\SingleFactorAuthentication.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\EmployeeLeave\ILeaveHandler.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\EmployeeLeave\TeamLead.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\EmployeeLeave\ProjectManager.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\EmployeeLeave\DeliveryManager.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Logger\Debug.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Logger\Error.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Logger\Info.cs" />
-    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Logger\LoggerHandler.cs" />
+    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Leave.cs" />
+    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\Logger.cs" />
+    <Compile Include="Patterns\Behaviourial\ChainOfResponsiblity\ProjectDelivery.cs" />
     <Compile Include="Patterns\Behaviourial\Command\Close.cs" />
     <Compile Include="Patterns\Behaviourial\Command\ICommand.cs" />
     <Compile Include="Patterns\Behaviourial\Command\Open.cs" />
@@ -80,7 +77,8 @@
     <Compile Include="Patterns\Behaviourial\Iterator\SocialNetwork\ISocialNetwork.cs" />
     <Compile Include="Patterns\Behaviourial\Iterator\SocialNetwork\Twitter.cs" />
     <Compile Include="Patterns\Behaviourial\Iterator\SocialNetwork\TwitterIterator.cs" />
-    <Compile Include="Patterns\Behaviourial\Mediaor\Class1.cs" />
+    <Compile Include="Patterns\Behaviourial\Mediaor\AirTraficControl.cs" />
+    <Compile Include="Patterns\Behaviourial\Mediaor\FacebookGroup.cs" />
     <Compile Include="Patterns\Behaviourial\Memento\CareTaker.cs" />
     <Compile Include="Patterns\Behaviourial\Memento\Memento.cs" />
     <Compile Include="Patterns\Behaviourial\Memento\Orginator.cs" />
@@ -88,22 +86,22 @@
     <Compile Include="Patterns\Behaviourial\Observer\YoutubeChannel\ISubscriber.cs" />
     <Compile Include="Patterns\Behaviourial\Observer\YoutubeChannel\User.cs" />
     <Compile Include="Patterns\Behaviourial\Observer\YoutubeChannel\YouTubeChannel.cs" />
-    <Compile Include="Patterns\Behaviourial\Strategy\IOfferStrategy.cs" />
-    <Compile Include="Patterns\Behaviourial\Strategy\WeekDaysOffer.cs" />
-    <Compile Include="Patterns\Behaviourial\Strategy\WeekendOffer.cs" />
-    <Compile Include="Patterns\Behaviourial\Template\Audi.cs" />
-    <Compile Include="Patterns\Behaviourial\Template\Benz.cs" />
-    <Compile Include="Patterns\Behaviourial\Template\BMW.cs" />
-    <Compile Include="Patterns\Behaviourial\Template\CarTemplate.cs" />
-    <Compile Include="Patterns\Behaviourial\Template\House\HouseTemplate.cs" />
-    <Compile Include="Patterns\Behaviourial\Template\House\GlassHouse.cs" />
-    <Compile Include="Patterns\Behaviourial\Template\House\WoodenHouse.cs" />
+    <Compile Include="Patterns\Behaviourial\Strategy\Authentication.cs" />
+    <Compile Include="Patterns\Behaviourial\Strategy\Offer.cs" />
+    <Compile Include="Patterns\Behaviourial\Template\Car.cs" />
+    <Compile Include="Patterns\Behaviourial\Template\House.cs" />
+    <Compile Include="Patterns\Behaviourial\Template\Loan.cs" />
     <Compile Include="Patterns\Creational\Builder\BuilderPhone.cs" />
-    <Compile Include="Patterns\Creational\Factory\FactoryEmployee.cs" />
+    <Compile Include="Patterns\Creational\FactoryMethod\CarFactory.cs" />
+    <Compile Include="Patterns\Creational\FactoryMethod\SimpleFactoryEmployee.cs" />
     <Compile Include="Patterns\Creational\Factory\FactoryAnimal.cs" />
-    <Compile Include="Patterns\Decorator\DecoratorDosa.cs" />
-    <Compile Include="Patterns\Decorator\DecoratorPizza.cs" />
+    <Compile Include="Patterns\Structural\Adapter\BillingSystem.cs" />
+    <Compile Include="Patterns\Structural\Adapter\Converter.cs" />
+    <Compile Include="Patterns\Structural\Adapter\Logger.cs" />
+    <Compile Include="Patterns\Structural\Decorator\DecoratorDosa.cs" />
+    <Compile Include="Patterns\Structural\Decorator\DecoratorPizza.cs" />
     <Compile Include="Patterns\Structural\Composite\CompositeEmployee.cs" />
+    <Compile Include="Patterns\Structural\Decorator\OrderPayment.cs" />
     <Compile Include="Patterns\Structural\Facade\FacadeCar.cs" />
     <Compile Include="Patterns\Structural\Facade\FacadePizza.cs" />
     <Compile Include="Patterns\Creational\Singleton\Singleton.cs" />
@@ -117,7 +115,10 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Patterns\Creational\AbstractFactory\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

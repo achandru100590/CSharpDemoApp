@@ -5,6 +5,7 @@ namespace DemoApp.Concepts.Delegates
 {
     public class Numbers
     {
+        #region Before Delegate
 
         public IEnumerable<int> GetNumberLessThanFive(IEnumerable<int> numbers)
         {
@@ -12,7 +13,6 @@ namespace DemoApp.Concepts.Delegates
             {
                 if (number < 5)
                     yield return number;
-
             }
         }
 
@@ -22,7 +22,6 @@ namespace DemoApp.Concepts.Delegates
             {
                 if (number < 5)
                     yield return number;
-
             }
         }
 
@@ -32,19 +31,21 @@ namespace DemoApp.Concepts.Delegates
             {
                 if (number > 5)
                     yield return number;
-
             }
         }
 
+        #endregion Before Delegate
+
+        #region After Delegate
 
         public delegate bool ConditionDelegate(int num);
+
         public IEnumerable<int> GetNumbers(IEnumerable<int> numbers, ConditionDelegate condition)
         {
             foreach (var number in numbers)
             {
                 if (condition(number))
                     yield return number;
-
             }
         }
 
@@ -54,10 +55,9 @@ namespace DemoApp.Concepts.Delegates
             {
                 if (condition(number))
                     yield return number;
-
             }
         }
-        
 
+        #endregion After Delegate
     }
 }
